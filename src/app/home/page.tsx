@@ -27,10 +27,6 @@ const Page = ({ searchParams }: { searchParams: { page: string } }) => {
   const start = 1;
 
   const nextPage = page + 1;
-  let pageNumbers = [];
-  for (let i = 1; i <= totalPages; i++) {
-    pageNumbers.push(i);
-  }
 
   return (
     <div className="pb-14">
@@ -45,9 +41,6 @@ const Page = ({ searchParams }: { searchParams: { page: string } }) => {
             <div className="flex justify-center items-center gap-[5px]">
               <CustomPaginationButtons href={`?page=${start}`} icon label="First.svg" />
               <CustomPaginationButtons href={`?page=${prevPage}`} icon label="Prev.svg" />
-              {/* {pageNumbers.map((p,index) => (
-                <Link key={index} scroll={false} onClick={scrollToTop} className={`flex items-center justify-center w-8 h-8 p-[10px] rounded-lg border border-[#f1f1f1] ${page===p ? "bg-blue-600 text-white" : null}`} href={`?page=${p}`}>{p}</Link>
-              ))} */}
               <CustomPaginationButtons href={`?page=${nextPage}`} icon label="Next.svg" />
               <CustomPaginationButtons href={`?page=${totalPages}`} icon label="Last.svg" />
             </div>

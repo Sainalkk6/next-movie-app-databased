@@ -67,7 +67,7 @@ const LoginForm = () => {
                 <p className='text-[#666] text-base'>By continuing, you agree to the <span className='underline text-[#111] dark:text-white'>Terms of use</span> and <span className='text-[#111] dark:text-white underline'>Privacy Policy</span></p>
               </form>
             </div>
-            <div className='flex w-full items-center gap-[23px] mt-5 mb-5'>
+            <div className='sm:flex w-full justify-center items-center gap-[23px] mt-5 mb-5'>
               <span className='h-[2px] flex-1 bg-slate-500'></span>
               <span className='text-[#666] text-[22px]'>New to our community</span>
               <span className='h-[2px] flex-1 bg-slate-500'></span>

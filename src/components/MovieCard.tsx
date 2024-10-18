@@ -28,7 +28,7 @@ const MovieCard = ({description,poster,rating,releaseData,title,id}:MovieCardPro
   }
 
   return (
-    <div className="w-full flex py-[30px]  px-9 items-center justify-center gap-6 ">
+    <div className="w-full flex py-[30px]  md:px-9 items-center justify-center gap-6 ">
       <div></div>
       <div className="flex max-w-[1200px] border border-[#dadada] sm:border-r-0 sm:border-t-0 sm:border-l-0 md:pt-0 pt-5 sm:flex-row flex-col  w-full justify-end items-center px-6 gap-6 hover:shadow-lg transition-all duration-300 border-b pb-10 dark:border-slate-700 dark:border-b-slate-700 border-b-[#dadada]">
         <div className="cursor-pointer hover:scale-105 duration-300 transition"  onClick={()=> router.push(`/movie/${id}`)} >

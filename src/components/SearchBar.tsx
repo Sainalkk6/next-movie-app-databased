@@ -8,9 +8,9 @@ const SearchBar = () => {
     const router = useRouter()
 
   return (
-    <div className="flex items-center h-[44px] pl-5 gap-5 justify-start border-neutral-300 border rounded-[70px]  max-w-[492px] w-full">
-          <button type="submit"><CiSearch className="h-6 w-6" /></button>
-          <input className="outline-none text-lg w-full" type="text" placeholder="Search for movies" value={search} onChange={(e)=> {
+    <div className="sm:flex hidden items-center h-[44px] pl-5 gap-5 justify-start border-neutral-300 border rounded-[70px]  max-w-[492px] w-full">
+          <button type="submit"><CiSearch className="h-6 w-6 sm:flex " /></button>
+          <input className="outline-none text-lg w-full sm:placeholder:text-slate-500 placeholder:text-white" type="text" placeholder="Search for movies" value={search} onChange={(e)=> {
             setSearch(e.target.value)
             {e.target.value ? router.push(`/home/search?search=${e.target.value.trim()}`) : router.push("/home")}
             }} />

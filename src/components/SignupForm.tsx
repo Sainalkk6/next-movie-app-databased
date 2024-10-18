@@ -70,7 +70,7 @@ const SignupForm = () => {
             <h1 className="font-medium text-3xl text-[#3563e9] leading-[48px] tracking-[-0.96px]">INFINITY</h1>
             <div className="flex flex-col">
               <span className="text-3xl font-medium leading-[48px] text-[#333] dark:text-white/70">Create an account</span>
-              <Link className="flex items-start gap-[10px] p-[2px] text-lg leading-6 font-normal" href={"/login"}>
+              <Link className="flex items-start gap-[10px] p-[2px] text-lg leading-6 font-normal whitespace-nowrap" href={"/login"}>
                 Already have an account ? <span className="underline text-[#3563e9] cursor-pointer  hover:scale-105 transition duration-200">Log in</span>
               </Link>
             </div>
@@ -102,7 +102,7 @@ const SignupForm = () => {
             </div>
           </form>
         </div>
-        <div className="flex items-center justify-center relative ">
+        <div className="hidden sm:flex items-center justify-center relative ">
            <Image className="relative -top-16" src={logo} width={285} height={301} alt="logo" /> 
         </div>
       </div>

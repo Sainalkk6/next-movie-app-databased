@@ -15,7 +15,7 @@ export const POST = async(req:NextRequest)=>{
             return NextResponse.json({message:"This movie already exists in the watchlater"})
         }
     } catch(error){
-        return NextResponse.json({message:"Something went wrong"})
+        return NextResponse.json({message:"Something went wrong",error})
     }
 
 }
