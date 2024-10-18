@@ -10,7 +10,7 @@ export const GET = async(req:NextRequest)=>{
         const data = await Movie.find().limit(perPage).skip(perPage * (page-1))
         const itemCount = await Movie.countDocuments({})
         return  NextResponse.json({data,itemCount})
-    } catch(err:any){
-        return NextResponse.json({message:"Fetch failed"},{status:200})
+    } catch(error){
+        return NextResponse.json({message:"Fetch failed",error},{status:200})
     }
 }

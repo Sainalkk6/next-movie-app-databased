@@ -1,15 +1,11 @@
 "use client"
-import React, { useState } from "react";
+import React from "react";
 import star from "../../public/star.svg";
 import Image from "next/image";
 import { IoMdHeartEmpty } from "react-icons/io";
-import { LuHeartOff } from "react-icons/lu";
 import { BsClockHistory } from "react-icons/bs";
 import { MovieCardProps } from "@/types/types";
-import { CustomButton } from "./CustomButton";
 import { useSession } from "next-auth/react";
-import { IoHeartDislikeOutline } from "react-icons/io5";
-import { TbClockOff } from "react-icons/tb";
 import { useRouter } from "next/navigation";
 import { handleWatchLater } from "@/helpers/handleWatchLater";
 import { handleLikes } from "@/helpers/handleLikes";

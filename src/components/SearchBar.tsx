@@ -1,9 +1,7 @@
 "use client"
-import { useQuery } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import { CiSearch } from 'react-icons/ci'
-import { dataQueryKey } from '../../QueryKeys/dataQueryKeys'
 
 const SearchBar = () => {
     const [search,setSearch] = useState("")

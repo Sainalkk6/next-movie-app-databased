@@ -13,7 +13,7 @@ export const POST = async(req:NextRequest)=>{
             ids.map(async(movie)=>await Movie.findOne({id:Number(movie)}))
         )    
         return NextResponse.json(myWatchList)
-    } catch(err:any){
-        return NextResponse.json(err)
+    } catch(error){
+        return NextResponse.json(error)
     }
 }

@@ -7,7 +7,7 @@ import { DataType } from "@/types/types";
 import { CustomPaginationButtons } from "@/components/CustomPaginationButtons";
 
 
-const page = ({ searchParams }: { searchParams: { page: string } }) => {
+const Page = ({ searchParams }: { searchParams: { page: string } }) => {
   let page = parseInt(searchParams.page, 10);
   page = !page || page < 1 ? 1 : page;
   const perPage = 10;
@@ -58,4 +58,4 @@ const page = ({ searchParams }: { searchParams: { page: string } }) => {
   );
 };
 
-export default page;
+export default Page;

@@ -3,8 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { dataQueryKey } from "../../../../QueryKeys/dataQueryKeys";
 import Navbar from "@/components/Navbar";
-import Image from "next/image";
-import star from "../../../../public/star.svg";
 import Link from "next/link";
 import { BsClockHistory } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
@@ -12,15 +10,11 @@ import { handleWatchLater } from "@/helpers/handleWatchLater";
 import { useSession } from "next-auth/react";
 import { handleLikes } from "@/helpers/handleLikes";
 import { toast, ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
-const page = ({ params }: { params: { id: string } }) => {
+const Page = ({ params }: { params: { id: string } }) => {
   const { data } = useSession();
-  const {
-    data: movies,
-    isLoading,
-    isError,
-  } = useQuery({
+  const { data: movies, isLoading } = useQuery({
     queryKey: [dataQueryKey.movies, params.id],
     queryFn: async () => {
       const response = await fetch("/api/movie", {
@@ -31,14 +25,14 @@ const page = ({ params }: { params: { id: string } }) => {
       return response.json();
     },
   });
-  const handleLikeClicks = async() => {
-    const message = await handleLikes({ id: Number(params.id), email: data?.user?.email! });
-    toast.info(message.message,{closeOnClick:true,autoClose:1500});
+  const handleLikeClicks = async () => {
+    const message = await handleLikes({ id: Number(params.id), email: data?.user?.email ||"" });
+    toast.info(message.message, { closeOnClick: true, autoClose: 1500 });
   };
 
-  const handleWatchLaterClicks = async() => {
-    const message = await handleWatchLater({ id: Number(params.id), email: data?.user?.email! });
-    toast.info(message.message,{closeOnClick:true,autoClose:1500});
+  const handleWatchLaterClicks = async () => {
+    const message = await handleWatchLater({ id: Number(params.id), email: data?.user?.email || "" });
+    toast.info(message.message, { closeOnClick: true, autoClose: 1500 });
   };
 
   const movie = movies?.movie;
@@ -85,4 +79,4 @@ const page = ({ params }: { params: { id: string } }) => {
   );
 };
 
-export default page;
+export default Page;

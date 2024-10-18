@@ -6,7 +6,7 @@ import { useSession } from 'next-auth/react'
 import { DataType } from '@/types/types'
 import MovieCardOtherPage from '@/components/MovieCardOtherPage'
 
-const page = () => {
+const Page = () => {
   const {data:session,status} = useSession()
 
     const {data,isLoading} = useQuery({
@@ -39,4 +39,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

@@ -8,7 +8,7 @@ export const DELETE = async(req:NextRequest)=>{
         const {id} = await req.json()
         await WatchLater.findOneAndDelete({id})
         return NextResponse.json({message:"Successfully removed from the list"})
-    } catch(err:any){   
-        return NextResponse.json({message:"Something went wrong",err})
+    } catch(error){   
+        return NextResponse.json({message:"Something went wrong",error})
     }
 }

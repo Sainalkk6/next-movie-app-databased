@@ -7,9 +7,8 @@ import MovieCard from '@/components/MovieCard'
 import { DataType } from '@/types/types'
 import { ReactTyped } from 'react-typed'
 
-const page = () => {
+const Page = () => {
   const searchParams = useSearchParams();
-  const [count,setCount] = useState(0)
   const search = searchParams.get('search') ?? '';
   const [message,setMessage] = useState("")
   setTimeout(() => {
@@ -19,7 +18,7 @@ const page = () => {
     setMessage("We are working on it")
   },[search])
 
-  const { data, isLoading, error } = useQuery({
+  const { data} = useQuery({
     queryKey: [dataQueryKey.movies,search ],
     queryFn: async () => {
       if (!search) return []
@@ -49,4 +48,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

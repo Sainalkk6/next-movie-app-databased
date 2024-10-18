@@ -8,7 +8,7 @@ export const POST = async(req:NextRequest)=>{
         const {email} = await req.json()
         const user = await User.findOne({email}).select("_id")
         return NextResponse.json({user})
-    } catch(err:any){
-        return NextResponse.json({message:err.message})
+    } catch(error){
+        return NextResponse.json({message:error})
     }
 }

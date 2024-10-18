@@ -26,7 +26,8 @@ const LoginForm = () => {
             return
         }
         router.replace('/home')
-      } catch(err:any){
+      } catch(error){
+        return error
       }
     }
   })

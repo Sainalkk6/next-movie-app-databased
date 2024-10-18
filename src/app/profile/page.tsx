@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { FaUserCircle } from "react-icons/fa";
 
-const page = () => {
+const Page = () => {
   const { data } = useSession();
 
   return (
@@ -32,4 +32,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

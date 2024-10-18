@@ -15,7 +15,7 @@ export const POST = async(req:NextRequest)=>{
         } else {
             return NextResponse.json({message:"This movie already exists in the user favorite list"})
         }
-    } catch(err:any){
-        return NextResponse.json({message:"Something went wrong"})
+    } catch(error){
+        return NextResponse.json({message:"Something went wrong",error})
     }
 }

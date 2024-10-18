@@ -9,8 +9,7 @@ export const GET = async (req: NextRequest) => {
         const regex = new RegExp(params ?? '')
         const response = await Movie.find({ "title": { $regex: regex , $options:"i"} })
         return NextResponse.json({ response:response}) 
-    } catch (err: any) {
-        console.error("Error during query:", err);
-        return NextResponse.json({ message: "Something is not right", err })
+    } catch (error) {
+        return NextResponse.json({ message: "Something is not right", error })
     }
 }

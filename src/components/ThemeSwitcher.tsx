@@ -1,6 +1,6 @@
 "use client";
 import { useTheme } from "next-themes";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 export const ThemeSwitcher = () => {

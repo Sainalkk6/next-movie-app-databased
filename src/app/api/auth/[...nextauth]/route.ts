@@ -3,6 +3,7 @@ import { User } from "@/models/user";
 import NextAuth, { AuthOptions } from "next-auth";
 import bcrypt from "bcryptjs"
 import CredentialsProvider  from "next-auth/providers/credentials";
+import { NextResponse } from "next/server";
 
 export const authOption:AuthOptions ={
     providers:[
@@ -23,7 +24,8 @@ export const authOption:AuthOptions ={
                     }
 
                     return user
-                } catch(err:any){
+                } catch(error){
+                    return NextResponse.json({message:"Something went wrong",error})
                 }
             }
         })

@@ -9,7 +9,7 @@ export const POST = async (req: NextRequest) => {
         const { id } = await req.json()
         const movie = await Movie.findOne({ id })
         return NextResponse.json({movie})
-    } catch(err:any){
-        return NextResponse.json({message:"Something went wrong"})
+    } catch(error){
+        return NextResponse.json({message:"Something went wrong",error})
     }
 }

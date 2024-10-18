@@ -1,7 +1,5 @@
 import Provider from "@/providers/ThemeProvider";
-import Navbar from "../components/Navbar";
 import "./globals.css";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { AuthProvider } from "@/providers/AuthProvider";
 import { QueryProvider } from "@/providers/QueryProvider";
 
@@ -17,7 +15,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <QueryProvider>
           <AuthProvider>
             <Provider>
-              {/* <div className="absolute top-4 right-5"><ThemeSwitcher /></div> */}
               <main>{children}</main>
             </Provider>
           </AuthProvider>

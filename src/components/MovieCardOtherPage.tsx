@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import star from "../../public/star.svg";
 import Image from "next/image";
 import { NewMovieTypeProps } from "@/types/types";
@@ -24,6 +24,7 @@ const MovieCardOtherPage = ({ description, poster, rating, releaseData, title, i
       queryClient.invalidateQueries({ queryKey: [dataQueryKey.favorites] });
     }
     const data = await response.json();
+    return data
   };
 
 
@@ -38,6 +39,7 @@ const MovieCardOtherPage = ({ description, poster, rating, releaseData, title, i
     }
 
     const data = await response.json();
+    return data
   };
 
   return (

@@ -7,7 +7,7 @@ import { dataQueryKey } from "../../../../QueryKeys/dataQueryKeys";
 import { DataType } from "@/types/types";
 import MovieCardOtherPage from "@/components/MovieCardOtherPage";
 
-const page = () => {
+const Page = () => {
   const { data: session, status } = useSession();
   const { data, isLoading } = useQuery({
     queryKey: [dataQueryKey.watchlaters],
@@ -38,4 +38,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

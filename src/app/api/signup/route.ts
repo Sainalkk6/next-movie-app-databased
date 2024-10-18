@@ -10,7 +10,7 @@ export const POST = async(req:NextRequest)=>{
         await connect()
         await User.create({name,email,password:hashedPass})
         return NextResponse.json({message:"User has been created successfully"},{status:201})
-    } catch(err:any){   
-        return NextResponse.json({message:"Something went wrong"},{status:500})
+    } catch(error){   
+        return NextResponse.json({message:"Something went wrong",error},{status:500})
     }
 }

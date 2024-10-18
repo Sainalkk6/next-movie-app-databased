@@ -1,11 +1,9 @@
 "use client"
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import Link from "next/link";
-
 import { MdWatchLater } from "react-icons/md";
 import { HiHeart } from "react-icons/hi";
-import { CiSearch } from "react-icons/ci";
 import { FaUserCircle } from "react-icons/fa";
 import { CustomLink } from "./CustomLink";
 import { signOut, useSession } from "next-auth/react";

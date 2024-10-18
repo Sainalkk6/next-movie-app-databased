@@ -9,7 +9,7 @@ export const DELETE = async(req:NextRequest)=>{
         const {id} = await req.json()
         await UserFavorites.findOneAndDelete({id})
         return NextResponse.json({message:"Successfully deleted"})
-    } catch(err:any){   
-        return NextResponse.json({message:"Something went wrong",err})
+    } catch(error){   
+        return NextResponse.json({message:"Something went wrong",error})
     }
 }
