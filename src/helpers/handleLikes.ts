@@ -8,6 +8,5 @@ export const handleLikes = async({id,email}:HandleLikesProp)=>{
     })
 
     const data = await response.json()
-    console.log(data)
     return data
   }

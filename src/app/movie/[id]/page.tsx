@@ -31,15 +31,13 @@ const page = ({ params }: { params: { id: string } }) => {
       return response.json();
     },
   });
-  console.log(movies);
   const handleLikeClicks = async() => {
     const message = await handleLikes({ id: Number(params.id), email: data?.user?.email! });
     toast.info(message.message,{closeOnClick:true,autoClose:1500});
   };
 
   const handleWatchLaterClicks = async() => {
-    const message = await handleWatchLater({ id: Number(params.id), email: data?.user?.email! }); 
-    console.log(message)
+    const message = await handleWatchLater({ id: Number(params.id), email: data?.user?.email! });
     toast.info(message.message,{closeOnClick:true,autoClose:1500});
   };
 
