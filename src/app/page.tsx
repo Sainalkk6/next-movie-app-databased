@@ -2,7 +2,7 @@
 import LoginForm from "@/components/LoginForm";
 import React from "react";
 
-const page = () => {
+const Home = () => {
   // try{
   //   const dataRes = await fetch(`${process.env.URL}`)
   //   const data = await dataRes.json()
@@ -23,4 +23,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Home;

@@ -14,6 +14,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Page = ({ params }: { params: { id: string } }) => {
   const { data } = useSession();
+  const email = data?.user?.email || "";
+  const id = Number(params.id);
+
   const { data: movies, isLoading } = useQuery({
     queryKey: [dataQueryKey.movies, params.id],
     queryFn: async () => {
@@ -25,13 +28,14 @@ const Page = ({ params }: { params: { id: string } }) => {
       return response.json();
     },
   });
+
   const handleLikeClicks = async () => {
-    const message = await handleLikes({ id: Number(params.id), email: data?.user?.email ||"" });
+    const message = await handleLikes({ id, email });
     toast.info(message.message, { closeOnClick: true, autoClose: 1500 });
   };
 
   const handleWatchLaterClicks = async () => {
-    const message = await handleWatchLater({ id: Number(params.id), email: data?.user?.email || "" });
+    const message = await handleWatchLater({ id, email });
     toast.info(message.message, { closeOnClick: true, autoClose: 1500 });
   };
 
